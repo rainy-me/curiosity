@@ -19,7 +19,7 @@ let s:pink         = ['#dd63a6', '204']
 let s:yellow       = ['#fde86c', '220']
 let s:orange       = ['#fde86c', '215']
 let s:green        = ['#9aca31', '148']
-let s:blue         = ['#00bcd4', '45']
+let s:blue         = ['#00bcd4', '44']
 let s:purple       = ['#ae81ff', '135']
 let s:lightpurple  = ['#ae81ff', '141']
 let s:grey         = ['#eeeeee', '248']
@@ -39,11 +39,13 @@ fun <SID>h(group, fg, bg, attr)
 	endif
 endfun
 "}}}
-"Vim Highlighting
+
+" overall
 call <SID>h("Normal", s:foreground, s:background, "")
 call <SID>h("LineNr", s:darkgrey, "", "")
+call <SID>h("CursorLineNr", s:yellow, "", "")
 call <SID>h("NonText", s:yellow, "", "")
-call <SID>h("SpecialKey", s:darkgrey, "", "")
+call <SID>h("SpecialKey", s:pink, "", "")
 call <SID>h("Search", s:background, s:yellow, "")
 call <SID>h("TabLine", s:window, s:foreground, "reverse")
 call <SID>h("TabLineFill", s:window, s:foreground, "reverse")
@@ -65,6 +67,14 @@ call <SID>h("PMenu", s:foreground, s:yellow, "none")
 call <SID>h("PMenuSel", s:foreground, s:yellow, "reverse")
 call <SID>h("SignColumn", "", s:background, "none")
 call <SID>h("ColorColumn", "", s:line, "none")
+
+" vim 
+call <SID>h("vimCommand", s:pink, "", "none")
+call <SID>h("vimOption", s:blue, "", "none")
+call <SID>h("vimFunction", s:yellow, "", "none")
+call <SID>h("vimFunc", s:yellow, "", "none")
+call <SID>h("vimUserFunc",  s:yellow, "", "none")
+
 
 " Standard Highlighting
 
@@ -123,3 +133,33 @@ call <sid>h('typescriptIdentifier', s:orange, '', '')
 call <sid>h('scssSelectorName', s:foreground, '', '')
 call <sid>h('scssProperty', s:lightpurple, '', '')
 call <sid>h('scssAttribute', s:blue, '', '')
+
+" py
+
+call <sid>h('pythonCoding', s:darkgrey, '', '')
+call <sid>h('pythonBuiltinObj', s:blue, '', '')
+call <sid>h('pythonNone', s:blue, '', '')
+call <sid>h('pythonRepeat', s:blue, '', '')
+call <sid>h('pythonConditional', s:pink, '', '')
+call <sid>h('pythonOperator', s:pink, '', '')
+call <sid>h('pythonStatement', s:pink, '', '')
+call <sid>h('pythonException', s:pink, '', '')
+call <sid>h('pythonClassVar', s:orange, '', '')
+
+" rs
+
+call <sid>h('rustIdentifier', s:blue, '', '')
+call <sid>h('rustEnumVariant', s:purple, '', '')
+call <sid>h('rustConditional', s:pink, '', '')
+call <sid>h('rustRepeat', s:pink, '', '')
+call <sid>h('rustSelf', s:orange, '', '')
+call <sid>h('rustMacro', s:lightpurple, '', '')
+
+" go
+call <sid>h('goRepeat', s:pink, '', '')
+call <sid>h('goConditional', s:pink, '', '')
+call <sid>h('goStatement', s:pink, '', '')
+call <sid>h('goPackage', s:pink, '', '')
+call <sid>h('goImport', s:pink, '', '')
+call <sid>h('goBuiltins', s:blue, '', '')
+
